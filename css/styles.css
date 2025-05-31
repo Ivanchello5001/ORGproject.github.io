@@ -305,3 +305,8 @@ footer .container p {
 #backToTopBtn:hover {
   background-color: #8429b9;
 }
+
+#video .container video {
+  width: 100%;
+  height: auto;
+}
