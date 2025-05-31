@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Сообщи о нарушении</title>
+</head>
+<body>
+    <header>
+        <img src="img/scooter_header.jpg" alt="Электросамокаты" class="header-image">
+        <nav class="top-nav">
+            <button class="dropbtn">Меню</button>
+            <div class="dropdown-content">
+                <a href="rules.html">Правила и законы</a>
+                <a href="dangers.html">Опасности и последствия</a>
+                <a href="choosing-scooter.html">Как выбрать самокат?</a>
+                <a href="report.html">Сообщи о нарушении</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="menu-container">
+        <a href="index.html#introduction">Введение</a>
+        <a href="index.html#rules">Основные правила</a>
+        <a href="index.html#video">Видео</a>
+        <a href="index.html#cta">Призыв к действию</a>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2>Сообщи о нарушении</h2>
+                <p>Сообщите нам о случаях опасной езды на электросамокатах. Ваша информация поможет сделать наши улицы безопаснее.</p>
+
+                <form id="report-form">
+                    <label for="date">Дата и время нарушения:</label>
+                    <input type="datetime-local" id="date" name="date" required><br><br>
+
+                    <label for="location">Место нарушения:</label>
+                    <input type="text" id="location" name="location" required><br><br>
+
+                    <label for="description">Описание ситуации:</label>
+                    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+                    <label for="photo">Прикрепить фото/видео (необязательно):</label>
+                    <input type="file" id="photo" name="photo"><br><br>
+
+                    <label for="contact">Ваши контакты (по желанию):</label>
+                    <input type="email" id="contact" name="contact"><br><br>
+
+                    <input type="submit" value="Отправить">
+                </form>
+
+                <p id="success-message" style="display:none; color: green;">Заявка успешно оформлена!</p>
+
+                <p class="disclaimer"><b>Внимание:</b> Данные, которые вы предоставляете, не передаются третьим лицам.  В случае необходимости, информация может быть направлена в ГИБДД.</p>
+            </div>
+        </section>
+    </main>
+
+    <button id="backToTopBtn" title="Go to top">&#8593;</button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Безопасность электросамокатов. Все права защищены.</p>
+            <p>Катайся безопасно!</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+      document.getElementById('report-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+          // Здесь можно добавить код для отправки данных формы на сервер (AJAX)
+          // ...
+
+          // После успешной отправки данных:
+          document.getElementById('success-message').style.display = 'block';
+
+          // Дополнительно: скрыть сообщение через несколько секунд
+          setTimeout(function() {
+              document.getElementById('success-message').style.display = 'none';
+          }, 5000); // Скрыть через 5 секунд
+      });
+    </script>
+</body>
+</html>
